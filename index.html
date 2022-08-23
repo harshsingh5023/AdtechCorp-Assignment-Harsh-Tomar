@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AdtechCorp Assignment - Harsh Tomar</title>
+</head>
+
+<body>
+    <h1>AdtechCorp Assignment</h1>
+    <h2>Check console for output</h2>
+    <h3 style="text-align: right;">by Harsh Tomar</h3>
+    <script>
+        // Question 1 - Given a non-empty array of integers nums, 
+        // every element appears twice except for one. Find that single one
+
+        function singleOne(val) {
+            var sum;
+            for (let i = 0; i < val.length; i++) {
+                const element = val[i];
+                sum = sum ^ element;
+            }
+
+            return sum;
+        }
+
+        // console.log(singleOne([2, 2, 1]));
+
+
+        // Question 2 - Given an integer array nums, find the contigunous subarray
+        // which has largest sum amd return its sum.
+
+        function maxSubarraySum(arr) {
+            let maximum_Sum = arr[0];
+            let current_Sum = arr[0];
+            for (let i = 1; i < arr.length; i++) {
+                current_Sum = Math.max(arr[i], current_Sum + arr[i]);
+                maximum_Sum = Math.max(maximum_Sum, current_Sum);
+            }
+            return maximum_Sum;
+        }
+
+        console.log(maxSubarraySum([-2, -3, 4, -1, -2, 1, 5, -3]));
+
+    </script>
+</body>
+
+</html>
